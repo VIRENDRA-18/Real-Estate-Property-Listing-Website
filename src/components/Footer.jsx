@@ -4,14 +4,15 @@ function Footer() {
   return (
     <footer className="bg-slate-900 text-slate-300">
 
-      <div className="max-w-7xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+      {/* MAIN FOOTER */}
+      <div className="max-w-7xl mx-auto px-4 md:px-6 py-12 md:py-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-12">
 
         {/* BRAND */}
         <div>
-          <h3 className="text-white text-xl font-semibold">
+          <h3 className="text-white text-lg md:text-xl font-semibold">
             HomeFinder
           </h3>
-          <p className="mt-4 text-sm text-slate-400">
+          <p className="mt-4 text-sm text-slate-400 leading-relaxed">
             Helping you discover the perfect home with trust,
             transparency and simplicity.
           </p>
@@ -19,7 +20,7 @@ function Footer() {
 
         {/* QUICK LINKS */}
         <div>
-          <h4 className="text-white font-semibold mb-6">
+          <h4 className="text-white font-semibold mb-4 md:mb-6">
             Quick Links
           </h4>
           <ul className="space-y-3 text-sm">
@@ -43,7 +44,7 @@ function Footer() {
 
         {/* COMPANY */}
         <div>
-          <h4 className="text-white font-semibold mb-6">
+          <h4 className="text-white font-semibold mb-4 md:mb-6">
             Company
           </h4>
           <ul className="space-y-3 text-sm">
@@ -62,7 +63,7 @@ function Footer() {
 
         {/* CONTACT INFO */}
         <div>
-          <h4 className="text-white font-semibold mb-6">
+          <h4 className="text-white font-semibold mb-4 md:mb-6">
             Contact
           </h4>
           <p className="text-sm text-slate-400">
@@ -79,7 +80,7 @@ function Footer() {
       </div>
 
       {/* BOTTOM BAR */}
-      <div className="border-t border-slate-700 py-6 text-center text-sm text-slate-400">
+      <div className="border-t border-slate-700 py-5 md:py-6 text-center text-xs md:text-sm text-slate-400 px-4">
         © {new Date().getFullYear()} HomeFinder. All rights reserved.
       </div>
 
