@@ -7,7 +7,7 @@ import Properties from "./pages/Properties";
 import Agents from "./pages/Agents";
 
 import About from "./pages/About";
-// import Contact from "./pages/Contact";
+import Contact from "./pages/Contact";
 import Footer from "./components/Footer";
 
 
@@ -33,7 +33,7 @@ function App() {
 
 
         <Route path="/about" element={<About />} />
-        {/* <Route path="/contact" element={<Contact />} /> */}
+        <Route path="/contact" element={<Contact />} />
       </Routes>
       <Footer />
     </div>
