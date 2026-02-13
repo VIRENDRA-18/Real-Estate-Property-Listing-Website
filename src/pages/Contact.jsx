@@ -34,7 +34,7 @@ function Contact() {
                   Phone
                 </p>
                 <p className="text-base md:text-lg font-medium">
-                  +91 90000 00000
+                  +91 1800 400 111
                 </p>
               </div>
 
