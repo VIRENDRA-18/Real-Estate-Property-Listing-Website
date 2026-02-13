@@ -4,6 +4,8 @@ import Navbar from "./components/Navbar";
 
 import Home from "./pages/Home";
 import Properties from "./pages/Properties";
+import PropertyDetail from "./pages/PropertyDetail";
+
 import Agents from "./pages/Agents";
 
 import About from "./pages/About";
@@ -29,6 +31,8 @@ function App() {
           path="/properties"
           element={<Properties searchText={searchText} />}
         />
+        <Route path="/property/:id" element={<PropertyDetail />} />
+
         <Route path="/agents" element={<Agents />} />
 
 
