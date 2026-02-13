@@ -58,9 +58,7 @@ import PropertyCard from "../components/PropertyCard";
 function Properties({ searchText = "" }) {
   const [selectedType, setSelectedType] = useState("all");
 
-  // Smart search + type filter
   const filteredProperties = properties.filter((property) => {
-    // Multi-word search
     const searchWords = searchText.toLowerCase().split(" ");
 
     const matchesSearch =
@@ -71,7 +69,6 @@ function Properties({ searchText = "" }) {
           .includes(word)
       );
 
-    // Type filter
     const matchesType =
       selectedType === "all" ||
       property.type === selectedType;
@@ -81,44 +78,42 @@ function Properties({ searchText = "" }) {
 
   return (
     <div className="bg-slate-50 min-h-screen">
-      <div className="max-w-7xl mx-auto px-6 py-14">
+      <div className="max-w-7xl mx-auto px-4 md:px-6 py-12 md:py-16">
 
         {/* Page Heading */}
-        <div className="mb-8">
-          <h1 className="text-3xl font-bold">
+        <div className="mb-6 md:mb-8">
+          <h1 className="text-2xl md:text-3xl font-bold">
             All Properties
           </h1>
-          <p className="text-slate-600 mt-2">
+          <p className="text-slate-600 mt-2 text-sm md:text-base">
             Search by city or filter by property type
           </p>
         </div>
 
         {/* Filter Section */}
-        <div className="mb-8 flex flex-wrap gap-4">
+        <div className="mb-6 md:mb-8 flex flex-col sm:flex-row sm:items-center gap-4">
+
           <select
             value={selectedType}
             onChange={(e) => setSelectedType(e.target.value)}
-            className="border border-slate-300 px-4 py-2 rounded"
+            className="w-full sm:w-64 border border-slate-300 px-4 py-2 rounded bg-white"
           >
             <option value="all">All Types</option>
             <option value="Apartment">Apartment</option>
-
             <option value="Flat">Flat</option>
             <option value="House">House</option>
-
-
             <option value="Duplex">Duplex</option>
-
             <option value="PG">PG</option>
             <option value="Boys Hostel">Boys Hostel</option>
             <option value="Girls Hostel">Girls Hostel</option>
             <option value="Shared Room">Shared Room</option>
           </select>
+
         </div>
 
         {/* Properties Grid */}
         {filteredProperties.length === 0 ? (
-          <p className="text-slate-500">
+          <p className="text-slate-500 text-sm md:text-base">
             No properties found.
           </p>
         ) : (
@@ -138,4 +133,5 @@ function Properties({ searchText = "" }) {
 }
 
 export default Properties;
+
 

@@ -5,12 +5,13 @@ import PropertyCard from "../components/PropertyCard";
 function Home() {
   return (
     <div>
+
       {/* ================= HERO SECTION ================= */}
       <section
-        className="relative h-[80vh] bg-cover bg-center"
+        className="relative h-[65vh] md:h-[80vh] bg-cover bg-center"
         style={{
           backgroundImage:
-            "url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c')",
+            "url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1600')",
         }}
       >
         {/* Overlay */}
@@ -18,29 +19,32 @@ function Home() {
 
         {/* Content */}
         <div className="relative z-10 h-full flex items-center justify-center">
-          <div className="text-center text-white px-6">
-            <h1 className="text-5xl font-bold leading-tight">
+          <div className="text-center text-white px-4 md:px-6">
+
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">
               Find Your Dream Home
             </h1>
 
-            <p className="mt-5 text-lg text-slate-200">
+            <p className="mt-4 md:mt-5 text-base md:text-lg text-slate-200">
               Buy, sell or rent verified properties across top Indian cities
             </p>
 
             <Link
               to="/properties"
-              className="inline-block mt-8 px-8 py-3 bg-white text-slate-900 font-semibold rounded-lg hover:bg-slate-200 transition"
+              className="inline-block mt-6 md:mt-8 px-6 md:px-8 py-3 bg-white text-slate-900 font-semibold rounded-lg hover:bg-slate-200 transition"
             >
               Explore Properties
             </Link>
+
           </div>
         </div>
       </section>
 
       {/* ================= FEATURED PROPERTIES ================= */}
-      <section className="py-14 bg-slate-50">
-        <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-2xl font-semibold mb-8">
+      <section className="py-12 md:py-14 bg-slate-50">
+        <div className="max-w-7xl mx-auto px-4 md:px-6">
+
+          <h2 className="text-xl md:text-2xl font-semibold mb-6 md:mb-8">
             Featured Properties
           </h2>
 
@@ -55,7 +59,7 @@ function Home() {
           </div>
 
           {/* View All Button */}
-          <div className="text-center mt-10">
+          <div className="text-center mt-8 md:mt-10">
             <Link
               to="/properties"
               className="inline-block px-6 py-3 bg-slate-900 text-white rounded-lg hover:bg-slate-700 transition"
@@ -63,8 +67,10 @@ function Home() {
               View All Properties
             </Link>
           </div>
+
         </div>
       </section>
+
     </div>
   );
 }
