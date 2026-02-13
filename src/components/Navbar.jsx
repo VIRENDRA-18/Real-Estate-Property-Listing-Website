@@ -34,6 +34,12 @@ function Navbar({ searchText, setSearchText }) {
             </Link>
           </li>
           <li>
+            <Link to="/agents" className="text-white hover:text-blue-400">
+              Agents
+            </Link>
+          </li>
+
+          <li>
             <Link to="/about" className="text-white hover:text-blue-400">
               About
             </Link>
