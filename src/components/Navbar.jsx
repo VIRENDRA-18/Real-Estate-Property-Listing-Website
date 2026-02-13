@@ -1,9 +1,11 @@
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 function Navbar({ searchText, setSearchText }) {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <nav className="bg-slate-900">
-      {/* Container */}
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
 
         {/* Logo */}
@@ -11,18 +13,19 @@ function Navbar({ searchText, setSearchText }) {
           HomeFinder
         </h2>
 
-        {/* Search Bar */}
-        <input
-          type="text"
-          placeholder="Search city..."
-          value={searchText}
-          onChange={(e) => setSearchText(e.target.value)}
-          className="w-72 px-3 py-2 rounded-md outline-none text-sm"
-        />
+        {/* Desktop Search */}
+        <div className="hidden md:block">
+          <input
+            type="text"
+            placeholder="Search city..."
+            value={searchText}
+            onChange={(e) => setSearchText(e.target.value)}
+            className="w-72 px-3 py-2 rounded-md outline-none text-sm"
+          />
+        </div>
 
-
-        {/* Menu */}
-        <ul className="flex gap-5">
+        {/* Desktop Menu */}
+        <ul className="hidden md:flex gap-5">
           <li>
             <Link to="/" className="text-white hover:text-blue-400">
               Home
@@ -38,7 +41,6 @@ function Navbar({ searchText, setSearchText }) {
               Agents
             </Link>
           </li>
-
           <li>
             <Link to="/about" className="text-white hover:text-blue-400">
               About
@@ -51,7 +53,45 @@ function Navbar({ searchText, setSearchText }) {
           </li>
         </ul>
 
+        {/* Mobile Menu Button */}
+        <button
+          className="md:hidden text-white text-2xl"
+          onClick={() => setIsOpen(!isOpen)}
+        >
+          ☰
+        </button>
       </div>
+
+      {/* Mobile Menu */}
+      {isOpen && (
+        <div className="md:hidden bg-slate-800 px-6 py-4 flex flex-col gap-4">
+
+          {/* Mobile Search */}
+          <input
+            type="text"
+            placeholder="Search city..."
+            value={searchText}
+            onChange={(e) => setSearchText(e.target.value)}
+            className="w-full px-3 py-2 rounded-md outline-none text-sm"
+          />
+
+          <Link to="/" className="text-white" onClick={() => setIsOpen(false)}>
+            Home
+          </Link>
+          <Link to="/properties" className="text-white" onClick={() => setIsOpen(false)}>
+            Properties
+          </Link>
+          <Link to="/agents" className="text-white" onClick={() => setIsOpen(false)}>
+            Agents
+          </Link>
+          <Link to="/about" className="text-white" onClick={() => setIsOpen(false)}>
+            About
+          </Link>
+          <Link to="/contact" className="text-white" onClick={() => setIsOpen(false)}>
+            Contact
+          </Link>
+        </div>
+      )}
     </nav>
   );
 }
